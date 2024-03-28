@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Details from "./components/Details";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import FetchComponent from "./components/Fetch";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/detail" element={<Details />} />
+        </Routes>
+      </BrowserRouter>
+      <FetchComponent />
     </div>
   );
 }
